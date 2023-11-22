@@ -1,11 +1,10 @@
-use rocket::*;
+// package dependency
+use rocket::launch;
 
-#[get("/")]
-fn index() -> String {
-    String::from("Hello, World!")
-}
+// module dependency
+use rocket_prac::fn_lib::launch_rocket;
 
 #[launch]
-fn rocket() -> _ {
-    rocket::build().mount("/", routes![index])
+pub fn rocket() -> _ {
+    launch_rocket()
 }
