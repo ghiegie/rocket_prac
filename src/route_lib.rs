@@ -79,7 +79,7 @@ pub async fn test_read() -> String {
     to_return
 }
 
-#[get("/dyn_param/<something>")]
-pub async fn test_create(something: i32) -> i32 {
-    something
+#[get("/dyn_param/<something..>")]
+pub async fn test_create(something: i32) -> () {
+
 }
